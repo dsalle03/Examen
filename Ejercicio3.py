@@ -2,8 +2,7 @@ class alumno():
     def __init__(self, nombre, nota):
         self.nombre = nombre
         self.nota = nota
-    def __str__(self):
-        return "El alumno se llama {}, y su nota es {}".format(self.nombre, self.nota)
+
 
 
 david = alumno("David Sallé", 10)
@@ -22,9 +21,15 @@ def constructor(clase):
 constructor(clase)
 
 def calificacion(clase):
+    print("Los alumnos aprobados son:")
+    for i in clase:
+        if i.nota >= 5:
+            print(i.nombre)
+
+    print("Los alumnos suspensos son:")
     for i in clase:
         if i.nota < 5:
-            print("Los alumnos suspensos son:")
             print(i.nombre)
+
 
 calificacion(clase)
